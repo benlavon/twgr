@@ -1,13 +1,12 @@
 class Ticket
-  def initialize(venue,date)
+  def initialize(venue)
     @venue = venue
-    @date = date
   end
   def venue
     @venue
   end
-  def date
-    @date
+  def date=(date)
+    @date = date
   end
   def price=(amount)
     if (amount * 100).to_i == amount * 100
@@ -27,8 +26,10 @@ class Ticket
   end
 end
 
-ticket = Ticket.new("Town Hall", "2013-11-12")
+ticket = Ticket.new("Town Hall")
 ticket.price = 63.00
+ticket.date = "2013-11-12"
 puts "The ticket costs $#{"%.2f" % ticket.price}."
-ticket.price = 72.50
+ticket.price = 100
 puts "Whoops -- it just went up. It now costs $#{"%.2f" % ticket.price}."
+puts "The ticket for #{ticket.venue} has been discounted 15% to #{ticket.discount(15)}"
