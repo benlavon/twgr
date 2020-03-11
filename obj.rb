@@ -12,3 +12,8 @@ def obj.c2f(c)
 end
 
 puts obj.c2f(100)
+
+# Example of empty arg list
+def welcome_the_user()
+  puts "Hi there!"
+end
