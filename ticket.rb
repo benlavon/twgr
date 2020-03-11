@@ -44,6 +44,10 @@ def ticket.available?
   false
 end
 
+def ticket.print_details(*x)
+  x.each { |detail| puts "This ticket is #{detail}" }
+end
+
 if ticket.available?
   puts "You're in luck!"
 else
@@ -57,3 +61,5 @@ if ticket.respond_to?(request)
 else
   puts "No such information available"
 end
+
+ticket.print_details("non-refundable", "non-transferable", "in a non-smoking section")
