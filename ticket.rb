@@ -49,3 +49,11 @@ if ticket.available?
 else
   puts "Sorry--that seat has been sold"
 end
+
+print "Information desired: "
+request = gets.chomp
+if ticket.respond_to?(request)
+  puts ticket.send(request)
+else
+  puts "No such information available"
+end
