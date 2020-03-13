@@ -1,8 +1,15 @@
 class Ticket
+  VENUES = ["Convention Center", "Fairgrounds", "Town Hall"]
+
   attr_reader :venue, :date
   attr_accessor :price
+
   def initialize(venue,date)
-    @venue = venue
+    if VENUES.include?(venue)
+      @venue = venue
+    else
+      raise ArgumentError, "Unknown venue #{venue}"
+    end
     @date = date
   end
 end
@@ -19,3 +26,5 @@ cc.price = 10.00
 fg.price = 18.00
 highest = Ticket.most_expensive(th,cc,fg)
 puts "The highest-priced ticket is the one for #{highest.venue}"
+
+puts Ticket::VENUES
