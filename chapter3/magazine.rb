@@ -13,3 +13,9 @@ puts "Mag is published by #{mag.publisher} and edited by #{mag.editor}."
 
 class Ezine < Magazine
 end
+
+another_mag = Magazine.new
+def another_mag.wings
+  puts "Look! I can fly!"
+end
+another_mag.wings
