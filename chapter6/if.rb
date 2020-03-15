@@ -46,3 +46,8 @@ elsif x > 0
 else
   "zero"
 end
+
+# Assignment in conditional
+if x = 1
+  puts "Hi!"
+end
