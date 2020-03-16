@@ -6,3 +6,9 @@ def my_loop
 end
 
 my_loop { puts "My-looping forever!" }
+
+# All of these are equal
+loop { puts "Hi" }
+loop() { puts "Hi" }
+string.scan(/[^,]+/)
+string.scan(/[^,]+/) {|word| puts word }
