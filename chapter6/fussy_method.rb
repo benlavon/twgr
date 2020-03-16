@@ -4,6 +4,10 @@ end
 
 begin
   fussy_method(20)
-rescue ArgumentError
+rescue ArgumentError => e
   puts "That was not an acceptable number!"
+  puts "Here's the backtrace for this exception:"
+  puts e.backtrace
+  puts "Andhere's the exception object's message:"
+  puts e.message
 end
